@@ -1,0 +1,41 @@
+name: personal_finance_app
+description: "A new Flutter project."
+publish_to: 'none' 
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations: # Untuk lokalisasi tanggal
+    sdk: flutter
+
+  # State Management
+  flutter_riverpod: ^2.5.1
+
+  # Database Lokal
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path_provider: ^2.1.2 # Untuk mendapatkan path direktori
+
+  # Utility
+  intl: 0.20.2 # Untuk format mata uang dan tanggal
+  flutter_slidable: ^4.0.3 # UI untuk swipe action
+  uuid: ^4.3.3 # Untuk generate ID unik
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Hive Code Generation
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.8
+
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
