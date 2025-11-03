@@ -29,15 +29,15 @@ class MyApp extends ConsumerWidget {
     final themeMode = ref.watch(settingsProvider);
 
     return MaterialApp(
-      title: 'Personal Finance',
+      title: 'Dollars',
       theme: ThemeData(
         brightness: Brightness.light,
-        primarySwatch: Colors.indigo,
+        primarySwatch: Colors.red,
         useMaterial3: true,
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
-        primarySwatch: Colors.indigo,
+        primarySwatch: Colors.red,
         useMaterial3: true,
       ),
       themeMode: themeMode,

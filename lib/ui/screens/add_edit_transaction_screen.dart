@@ -78,6 +78,17 @@ class _AddEditTransactionScreenState extends ConsumerState<AddEditTransactionScr
         );
         return;
       }
+      String notes = _notesController.text.trim();
+        // Cek apakah deskripsi kosong.
+        if (notes.isEmpty) {
+          // Jika kosong, cari nama kategori yang dipilih.
+          final categories = ref.read(categoryProvider);
+          final selectedCategory = categories.firstWhere(
+            (category) => category.id == _selectedCategoryId,
+          );
+          // Gunakan nama kategori sebagai deskripsi.
+          notes = selectedCategory.name;
+        }
 
       final amount = double.parse(_amountController.text);
       final transaction = TransactionModel(
@@ -85,7 +96,7 @@ class _AddEditTransactionScreenState extends ConsumerState<AddEditTransactionScr
         amount: amount,
         categoryId: _selectedCategoryId!,
         date: _selectedDate,
-        notes: _notesController.text.trim(),
+        notes: notes,
         type: _selectedType,
       );
 
